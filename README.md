@@ -1,0 +1,2 @@
+# pokedex
+Découverte de typescript
