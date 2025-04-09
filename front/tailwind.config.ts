@@ -10,13 +10,19 @@ export default {
     extend: {
       colors: {
         background: "var(--background)",
+        "background-contrast": "var(--background-contrast)",
         foreground: "var(--foreground)",
+        "foreground-contrast": "var(--foreground-contrast)",
+        "text-contrast": "var(--text-contrast)",
         primary: {
           DEFAULT: "var(--primary)",
           light: "var(--primary-light)",
           dark: "var(--primary-dark)",
         }
       },
+      borderRadius: {
+        DEFAULT: "var(--shape)",
+      }
     },
   },
   plugins: [],

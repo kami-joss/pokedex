@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #3730a3;
+  --primary-dark: #06a2f1;
+  --primary-light: #78d1ff;
+  --secondary: #ff3366;
+  --secondary-dark: #e6004c;
+  --secondary-light: #ff6699;
+  --gray: #f5f5f5;
+  --shape: 0.5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #020101;
+    --foreground: #262626;
+    --text: oklch(0.985 0 0);
+    --text-contrast: oklch(0.205 0 0);
+    --background-contrast: #fafafa;
+    --foreground-contrast: #fefefe;
+  }
+  input {
+    background: var(--foreground);
+    color: var(--text);
+    border-color: var(--background);
+  }
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: #fafafa;
+    --foreground: #fefefe;
+    --text: oklch(0.205 0 0);
+    --background-contrast: #020101;
+    --foreground-contrast: #262626;
+    --text-contrast: oklch(0.985 0 0);
+  }
+  input {
+    background: var(--foreground);
+    color: var(--text);
+  }
+}
+
+body {
+  color: var(--text);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+input {
+  border: solid 1px var(--gray);
+}
+
+input:focus {
+  border: 1px solid var(--primary-dark);
+  outline: none;
+}
+
+/* FONT SIZES */
+h1 {
+  @apply text-4xl;
+}
+
+h2 {
+  @apply text-3xl;
+}
+
+h3 {
+  @apply text-2xl;
+}
+
+h4 {
+  @apply text-xl;
+}
+
+h5 {
+  @apply text-lg;
+}
+
+h6 {
+  @apply text-base;
+}
+
+p {
+  @apply text-base;
+}
+
+.bloc {
+  @apply flex flex-col gap-4 rounded p-4 shadow-md bg-foreground;
+}
+
+/* BUTTONS */
+.btn {
+  @apply w-full rounded-lg px-4 py-2 duration-100;
+}
+
+.btn-outline {
+  @apply outline outline-1;
+}
+
+.btn-primary {
+  @apply bg-primary hover:bg-primary-dark;
+}
+
+.btn-white {
+  @apply bg-neutral-50 hover:bg-neutral-100 text-black;
+}
+
+.btn-contrast {
+  @apply bg-foreground-contrast hover:bg-background-contrast text-text-contrast;
+}
